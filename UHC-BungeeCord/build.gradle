@@ -1,0 +1,11 @@
+repositories {
+    mavenCentral()
+    maven {
+        name = 'destroystokyo-repo'
+        url = 'https://repo.destroystokyo.com/repository/maven-public/'
+    }
+}
+
+dependencies {
+    compileOnly 'io.github.waterfallmc:waterfall-api:1.13-SNAPSHOT'
+}

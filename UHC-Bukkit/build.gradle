@@ -1,0 +1,11 @@
+repositories {
+    mavenCentral()
+    maven {
+        name = 'xtr3m3k-repo'
+        url = 'http://maven.xtr3m3k.net'
+    }
+}
+dependencies {
+    compileOnly "org.github.paperspigot:paperspigot-api:1.8.8-R0.1-SNAPSHOT"
+    compileOnly "org.github.paperspigot:paperspigot:1.8.8-R0.1-SNAPSHOT"
+}
