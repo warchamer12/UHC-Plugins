@@ -96,17 +96,17 @@ public class UHCMovingBorder {
                 }, i*5);
             }
         }
-        for(int i = 1; i <= st; i++){
-            if(newZ < this.centerZ){
-                double n = this.centerZ-(i*stepsZ);
-                bs.runTaskLaterAsynchronously(UHCPlugin.Companion.getInstance(), ()->{
+        for(int i = 1; i <= st; i++) {
+            if (newZ < this.centerZ) {
+                double n = this.centerZ - (i * stepsZ);
+                bs.runTaskLaterAsynchronously(UHCPlugin.Companion.getInstance(), () -> {
                     this.worldBorder.setCenter(this.worldBorder.getCenter().getX(), n);
-                }, i*5);
-            }else{
-                double n = this.centerZ+(i*stepsZ);
-                bs.runTaskLaterAsynchronously(UHCPlugin.Companion.getInstance(), ()->{
+                }, i * 5);
+            } else {
+                double n = this.centerZ + (i * stepsZ);
+                bs.runTaskLaterAsynchronously(UHCPlugin.Companion.getInstance(), () -> {
                     this.worldBorder.setCenter(this.worldBorder.getCenter().getX(), n);
-                }, i*5);
+                }, i * 5);
             }
         }
     }
