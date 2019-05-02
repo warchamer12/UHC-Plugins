@@ -1,5 +1,6 @@
 package net.warchamer12.uhc;
 
+import net.warchamer12.uhc.border.UHCApiBorder;
 import net.warchamer12.uhc.listeners.JoinListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
@@ -13,6 +14,7 @@ public class JavaClass extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("On");
+        new UHCApiBorder();
         getListeners();
         getCommands();
     }

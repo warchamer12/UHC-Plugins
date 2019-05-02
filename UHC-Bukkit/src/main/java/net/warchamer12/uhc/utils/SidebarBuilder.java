@@ -2,13 +2,17 @@ package net.warchamer12.uhc.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 
 public class SidebarBuilder {
 
-    public void sendSidebar(Player player) {
+    private Scoreboard sidebar;
+
+    public void sendScoreboard(Player player) {
         Scoreboard UHCSidebar = Bukkit.getScoreboardManager().getNewScoreboard();
-        Objective UHCObject = board.registerNewObjective("", "dummy")
+        Objective UHCObject = sidebar.registerNewObjective(Util.fixColor(""), "dummy");
+        UHCObject.setDisplaySlot(DisplaySlot.SIDEBAR);
     }
 }

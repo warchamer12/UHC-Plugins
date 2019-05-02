@@ -19,7 +19,7 @@ public class JoinListener implements Listener {
         new BukkitRunnable() {
             @Override
             public void run() {
-                Util.sendSidebar(player);
+                Util.sendScoreboard(player);
             }
         }.runTaskLater(JavaClass.getPlugin(), 3L);
     }
