@@ -1,4 +1,5 @@
 rootProject.name = 'UHC-Plugins'
 include 'UHC-Bukkit'
 include 'UHC-BungeeCord'
+include 'UHC-Hub'
 
