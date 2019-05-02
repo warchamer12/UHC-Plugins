@@ -1,0 +1,6 @@
+config:
+  redis:
+    hostname: 'hostname'
+    password: 'password'
+    database: 0
+    port: 6379
