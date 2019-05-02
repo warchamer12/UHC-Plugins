@@ -1,6 +1,8 @@
 package net.warchamer12.uhc
 
+import net.warchamer12.uhc.listeners.JoinListener
 import net.warchamer12.uhc.redis.RedisManager
+import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 
 class UHCPlugin : JavaPlugin() {
@@ -26,6 +28,9 @@ class UHCPlugin : JavaPlugin() {
         logger.info("Connecting to redis server.")
         redisManager = RedisManager()
         redisManager.start()
+
+        val pluginManager = Bukkit.getPluginManager()
+        pluginManager.registerEvents(JoinListener(), this)
 
         logger.info("Plugin has been enabled.")
     }

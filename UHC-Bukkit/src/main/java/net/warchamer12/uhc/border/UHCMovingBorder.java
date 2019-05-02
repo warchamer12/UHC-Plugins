@@ -1,6 +1,6 @@
 package net.warchamer12.uhc.border;
 
-import net.warchamer12.uhc.JavaClass;
+import net.warchamer12.uhc.UHCPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -72,7 +72,7 @@ public class UHCMovingBorder {
     public void moveWorldBorder(double newX, double newZ, double newRadius, int timeInSeconds, double damageAmount){
         BukkitScheduler bs = Bukkit.getScheduler();
         int stepsTime = timeInSeconds*20;
-        if(damageAmount != this.borderAttackDamage)bs.runTaskLater(JavaClass.getPlugin(), ()->{setBorderDamage(damageAmount);}, stepsTime);
+        if(damageAmount != this.borderAttackDamage)bs.runTaskLater(UHCPlugin.Companion.getInstance(), ()->{setBorderDamage(damageAmount);}, stepsTime);
         int st = stepsTime/5;
         double gapX = 0;
         double gapZ = 0;
@@ -86,12 +86,12 @@ public class UHCMovingBorder {
         for(int i = 1; i <= st; i++){
             if(newX < this.centerX){
                 double n = this.centerX-(i*stepsX);
-                bs.runTaskLaterAsynchronously(JavaClass.getPlugin(), ()->{
+                bs.runTaskLaterAsynchronously(UHCPlugin.Companion.getInstance(), ()->{
                     this.worldBorder.setCenter(n, this.worldBorder.getCenter().getZ());
                 }, i*5);
             }else{
                 double n = this.centerX+(i*stepsX);
-                bs.runTaskLaterAsynchronously(JavaClass.getPlugin(), ()->{
+                bs.runTaskLaterAsynchronously(UHCPlugin.Companion.getInstance(), ()->{
                     this.worldBorder.setCenter(n, this.worldBorder.getCenter().getZ());
                 }, i*5);
             }
@@ -99,12 +99,12 @@ public class UHCMovingBorder {
         for(int i = 1; i <= st; i++){
             if(newZ < this.centerZ){
                 double n = this.centerZ-(i*stepsZ);
-                bs.runTaskLaterAsynchronously(JavaClass.getPlugin(), ()->{
+                bs.runTaskLaterAsynchronously(UHCPlugin.Companion.getInstance(), ()->{
                     this.worldBorder.setCenter(this.worldBorder.getCenter().getX(), n);
                 }, i*5);
             }else{
                 double n = this.centerZ+(i*stepsZ);
-                bs.runTaskLaterAsynchronously(JavaClass.getPlugin(), ()->{
+                bs.runTaskLaterAsynchronously(UHCPlugin.Companion.getInstance(), ()->{
                     this.worldBorder.setCenter(this.worldBorder.getCenter().getX(), n);
                 }, i*5);
             }

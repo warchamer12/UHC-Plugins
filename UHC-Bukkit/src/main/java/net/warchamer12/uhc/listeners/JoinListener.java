@@ -1,8 +1,7 @@
 package net.warchamer12.uhc.listeners;
 
-import net.warchamer12.uhc.JavaClass;
+import net.warchamer12.uhc.UHCPlugin;
 import net.warchamer12.uhc.utils.Util;
-import net.warchamer12.uhc.utils.SidebarBuilder;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -21,6 +20,6 @@ public class JoinListener implements Listener {
             public void run() {
                 Util.sendScoreboard(player);
             }
-        }.runTaskLater(JavaClass.getPlugin(), 3L);
+        }.runTaskLater(UHCPlugin.Companion.getInstance(), 3L);
     }
 }
