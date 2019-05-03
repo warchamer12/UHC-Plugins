@@ -1,4 +1,4 @@
-package net.warchamer12.uhc.utils;
+package net.warchamer12.uhc;
 
 import java.util.ArrayList;
 import java.util.Arrays;

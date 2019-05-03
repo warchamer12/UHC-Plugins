@@ -2,8 +2,8 @@ package net.warchamer12.uhc.listeners;
 
 import net.warchamer12.uhc.UHCPlugin;
 
-import net.warchamer12.uhc.utils.ScoreboardBuilder;
-import net.warchamer12.uhc.utils.Util;
+import net.warchamer12.uhc.ScoreboardBuilder;
+import net.warchamer12.uhc.Util;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

@@ -1,9 +1,8 @@
-package net.warchamer12.uhc.utils;
+package net.warchamer12.uhc;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
-import com.google.common.collect.MapConstraint;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;

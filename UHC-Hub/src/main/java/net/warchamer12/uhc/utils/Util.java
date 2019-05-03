@@ -9,9 +9,5 @@ public class Util {
         return ChatColor.translateAlternateColorCodes('&', string);
     }
 
-    public static void printScoreboard(Player player) {
-        //Date now = new Date();
-        //SimpleDateFormat date = new SimpleDateFormat("dd/MM/yyyy");
-        //scoreboard
-    }
+
 }
