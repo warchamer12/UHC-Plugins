@@ -22,6 +22,8 @@ class HubPlugin : JavaPlugin() {
     override fun onEnable() {
         instance = this
 
+        saveDefaultConfig()
+
         logger.info("Creating and loading config.")
         configManager = ConfigManager()
         configManager.loadConfig()
@@ -39,4 +41,6 @@ class HubPlugin : JavaPlugin() {
     override fun onDisable() {
         logger.info("Plugin has been disabled.")
     }
+
+
 }

@@ -15,6 +15,9 @@ class ConfigManager {
         redisPassword = config.getString("config.redis.password")
         redisDatabase = config.getInt("config.redis.database")
         redisPort = config.getInt("config.redis.port")
+
+
     }
+
 
 }
