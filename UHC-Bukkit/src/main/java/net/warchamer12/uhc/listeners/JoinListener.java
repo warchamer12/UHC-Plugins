@@ -19,6 +19,7 @@ public class JoinListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
+        player.setHealthScale(20D);
         ScoreboardBuilder sidebar = new ScoreboardBuilder(Util.fixColor("&e&lUHC CHAMPIONS"));
 
         Date teraz = new Date();
