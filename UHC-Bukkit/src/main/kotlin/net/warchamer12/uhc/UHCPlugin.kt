@@ -20,6 +20,8 @@ class UHCPlugin : JavaPlugin() {
     override fun onEnable() {
         instance = this
 
+        saveDefaultConfig()
+
         logger.info("Creating and loading config.")
         configManager = ConfigManager()
         configManager.loadConfig()
@@ -37,4 +39,6 @@ class UHCPlugin : JavaPlugin() {
     override fun onDisable() {
         logger.info("Plugin has been disabled.")
     }
+
+
 }

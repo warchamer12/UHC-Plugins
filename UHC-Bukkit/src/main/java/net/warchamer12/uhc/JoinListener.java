@@ -1,7 +1,6 @@
 package net.warchamer12.uhc;
 
 import net.warchamer12.uhc.basic.ArenaStorage;
-import net.warchamer12.uhc.basic.ArenaTimeType;
 import net.warchamer12.uhc.utils.ScoreboardBuilder;
 import net.warchamer12.uhc.utils.Util;
 import org.bukkit.entity.Player;
