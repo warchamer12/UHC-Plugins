@@ -1,5 +1,7 @@
 package net.warchamer12.uhc;
 
+import net.warchamer12.uhc.basic.ArenaStorage;
+import net.warchamer12.uhc.basic.ArenaTimeType;
 import net.warchamer12.uhc.utils.ScoreboardBuilder;
 import net.warchamer12.uhc.utils.Util;
 import org.bukkit.entity.Player;
@@ -17,6 +19,8 @@ public class JoinListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
+        ArenaStorage.INSTANCE.getArenasMap().get(1);
+
         player.setHealthScale(20D);
         ScoreboardBuilder sidebar = new ScoreboardBuilder(Util.fixColor("&e&lUHC CHAMPIONS"));
 
@@ -27,7 +31,7 @@ public class JoinListener implements Listener {
         sidebar.add(" ", -2);
         sidebar.add(Util.fixColor("&fGracze: &a" + online + "/70"), -3);
         sidebar.add(" ", -4);
-        sidebar.add(Util.fixColor("&fRozgrywka wystartuje za &a" + , -5));
+        sidebar.add(Util.fixColor("&fRozgrywka wystartuje za &a" + start, -5));
         sidebar.add(Util.fixColor("&fjesli dolaczy jeszcze &a" + more + " &fgraczy!", -6));
         sidebar.add(" ", -7);
         sidebar.add(Util.fixColor("&fTryb: &6&l" + modeGame), -8);
