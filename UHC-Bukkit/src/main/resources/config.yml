@@ -4,3 +4,7 @@ config:
     password: 'password'
     database: 0
     port: 6379
+  arena:
+    world: 'world_uhc'
+    id: 0
+    maxPlayers: 70

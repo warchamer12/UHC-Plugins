@@ -1,5 +1,6 @@
 package net.warchamer12.uhc
 
+import net.warchamer12.uhc.basic.Arena
 import net.warchamer12.uhc.redis.RedisManager
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
@@ -32,6 +33,8 @@ class UHCPlugin : JavaPlugin() {
 
         val pluginManager = Bukkit.getPluginManager()
         pluginManager.registerEvents(JoinListener(), this)
+
+        val arena = Arena(configManager.arenaId, configManager.arenaWorld, configManager.arenaMaxPlayers)
 
         logger.info("Plugin has been enabled.")
     }
