@@ -59,6 +59,7 @@ public class UHCMovingBorder {
         this.centerZ = border.getCenter().getZ();
         this.radius = border.getSize();
         this.borderAttackDamage = 1;
+
         this.worldBorder.setDamageAmount(1);
         this.worldBorder.setDamageBuffer(0);
         this.worldBorder.setWarningDistance(0);
