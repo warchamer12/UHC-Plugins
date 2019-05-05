@@ -20,4 +20,15 @@ object PacketManager {
         }
     }
 
+    @JvmStatic
+    fun joinPlayerToArena(uuid: UUID, id: Int) {
+        RedisManager.getJedis { jedis ->
+            val jsonObject = JsonObject()
+            jsonObject.addProperty("uuid", uuid.toString())
+            jsonObject.addProperty("id", id)
+
+            jedis.publish("UHC.joinPlayerToArena", gson.toJson(jsonObject))
+        }
+    }
+
 }
