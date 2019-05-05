@@ -1,6 +1,5 @@
 package net.warchamer12.uhc
 
-import net.warchamer12.uhc.listeners.JoinListener
 import net.warchamer12.uhc.redis.RedisManager
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin

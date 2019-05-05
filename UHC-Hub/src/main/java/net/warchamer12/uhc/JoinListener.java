@@ -1,4 +1,4 @@
-package net.warchamer12.uhc.listeners;
+package net.warchamer12.uhc;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

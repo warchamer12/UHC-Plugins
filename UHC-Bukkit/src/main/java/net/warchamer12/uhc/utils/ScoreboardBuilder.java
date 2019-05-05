@@ -1,4 +1,4 @@
-package net.warchamer12.uhc;
+package net.warchamer12.uhc.utils;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
