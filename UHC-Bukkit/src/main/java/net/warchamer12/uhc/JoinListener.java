@@ -53,7 +53,7 @@ public class JoinListener implements Listener {
                 Date teraz = new Date();
                 SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
 
-                Score s1 = objective.getScore(Util.fixColor("&7" + data.format(teraz) + "       &8" + MinecraftServer.getServer().recentTps));
+                Score s1 = objective.getScore(Util.fixColor("&7" + data.format(teraz) + "        &8" + Bukkit.getServer().getName()));
                 s1.setScore(10);
                 Score s2 = objective.getScore(Util.fixColor("&1"));
                 s2.setScore(9);
@@ -71,7 +71,7 @@ public class JoinListener implements Listener {
                 s8.setScore(3);
                 Score s9 = objective.getScore(Util.fixColor("&4"));
                 s9.setScore(2);
-                Score s10 = objective.getScore(Util.fixColor("            &e&lUHC CHAMPIONS"));
+                Score s10 = objective.getScore(Util.fixColor("             &e&lUHC CHAMPIONS"));
                 s10.setScore(1);
                 for(Player online : Bukkit.getServer().getOnlinePlayers()) {
                     online.setScoreboard(board);
