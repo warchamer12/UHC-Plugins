@@ -36,12 +36,11 @@ public class JoinListener implements Listener {
         Player player = event.getPlayer();
         UHCPlayers.add(player);
 
-        Arena arena = ArenaStorage.INSTANCE.getArenasMap().get(UHCPlugin.Companion.getConfigManager().getArenaId());
-
         player.setHealthScale(40D);
         new BukkitRunnable() {
             @Override
             public void run() {
+                Arena arena = ArenaStorage.INSTANCE.getArenasMap().get(UHCPlugin.Companion.getConfigManager().getArenaId());
                 ScoreboardBuilder sidebar = new ScoreboardBuilder(Util.fixColor("&eUHC CHAMPIONS"));
 
                 Date teraz = new Date();
