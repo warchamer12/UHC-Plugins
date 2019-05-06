@@ -42,19 +42,6 @@ public class JoinListener implements Listener {
             @Override
             public void run() {
                 Arena arena = ArenaStorage.INSTANCE.getArenasMap().get(UHCPlugin.Companion.getConfigManager().getArenaId());
-                /*ScoreboardBuilder sidebar = new ScoreboardBuilder(Util.fixColor("&eUHC CHAMPIONS"));
-
-                sidebar.add(Util.fixColor("&7" + data.format(teraz)), -1);
-                sidebar.add(" ", -2);
-                sidebar.add(Util.fixColor("&fGracze: &a" + Bukkit.getOnlinePlayers() + "/70"), -3);
-                sidebar.add(" ", -4);
-                sidebar.add(Util.fixColor("&fRozgrywka wystartuje za &a" + time), -5);
-                sidebar.add(Util.fixColor("&fjesli bedzie minimum &a30 &fgraczy!"), -6);
-                sidebar.add(" ", -7);
-                sidebar.add(Util.fixColor("&fTryb: &6&l" + arena.getArenaType().name()), -8);
-                sidebar.add("&eUHC CHAMPIONS", -9);
-                sidebar.build();
-                sidebar.send(player);*/
 
                 ScoreboardManager manager = Bukkit.getScoreboardManager();
                 Scoreboard board = manager.getNewScoreboard();
