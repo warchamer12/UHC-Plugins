@@ -1,5 +1,6 @@
 package net.warchamer12.uhc;
 
+import net.minecraft.server.v1_8_R3.MinecraftServer;
 import net.warchamer12.uhc.basic.Arena;
 import net.warchamer12.uhc.basic.ArenaStorage;
 import net.warchamer12.uhc.utils.Title;
@@ -65,7 +66,7 @@ public class JoinListener implements Listener {
                 Date teraz = new Date();
                 SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
 
-                Score s1 = objective.getScore(Util.fixColor("&7" + data.format(teraz) + "                 &8" + Bukkit.getServer().getName()));
+                Score s1 = objective.getScore(Util.fixColor("&7" + data.format(teraz) + "                   &8" + MinecraftServer.getServer().recentTps));
                 s1.setScore(10);
                 Score s2 = objective.getScore(Util.fixColor("&1"));
                 s2.setScore(9);
