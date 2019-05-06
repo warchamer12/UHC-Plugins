@@ -2,7 +2,6 @@ package net.warchamer12.uhc;
 
 import net.warchamer12.uhc.basic.Arena;
 import net.warchamer12.uhc.basic.ArenaStorage;
-import net.warchamer12.uhc.utils.ScoreboardBuilder;
 import net.warchamer12.uhc.utils.Title;
 import net.warchamer12.uhc.utils.Util;
 import org.bukkit.Bukkit;
@@ -68,19 +67,19 @@ public class JoinListener implements Listener {
 
                 Score s1 = objective.getScore(Util.fixColor("&7" + data.format(teraz)));
                 s1.setScore(9);
-                Score s2 = objective.getScore("   ");
+                Score s2 = objective.getScore(blankLine());
                 s2.setScore(8);
+                s2.setScore(6);
+                s2.setScore(3);
                 Score s3 = objective.getScore(Util.fixColor("&fGracze: &a" + Bukkit.getOnlinePlayers().size() + "/70"));
                 s3.setScore(7);
                 Score s4 = objective.getScore(" ");
-                s4.setScore(6);
-                Score s5 = objective.getScore("&fStartuje za &a" + time);
+                Score s5 = objective.getScore("&fRozgrywka wystartuje za &a" + time);
                 s5.setScore(5);
-                Score s6 = objective.getScore("&fMin &a30 graczy");
+                Score s6 = objective.getScore("&fjesli bedzie minimum &a30 &fgraczy!");
                 s6.setScore(4);
                 Score s7 = objective.getScore("  ");
-                s7.setScore(3);
-                Score s8 = objective.getScore("&fTryb: &6&l" + arena.getArenaType().name());
+                Score s8 = objective.getScore("&fTryb: &6&lSOLO");
                 s8.setScore(2);
                 Score s9 = objective.getScore("&e&lUHC CHAMPIONS");
                 s9.setScore(1);
@@ -189,6 +188,10 @@ public class JoinListener implements Listener {
         } else {
             return;
         }
+    }
+
+    public String blankLine() {
+        return " ";
     }
 
 
