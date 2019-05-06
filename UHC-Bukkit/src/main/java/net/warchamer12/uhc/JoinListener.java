@@ -46,7 +46,7 @@ public class JoinListener implements Listener {
                 ScoreboardManager manager = Bukkit.getScoreboardManager();
                 Scoreboard board = manager.getNewScoreboard();
 
-                String name = Util.fixColor("&e&lUHC CHAMPIONS");
+                String name = Util.fixColor("&eUHC CHAMPIONS");
 
                 Objective objective = board.registerNewObjective(Util.fixColor(name), "dummy");
                 objective.setDisplaySlot(DisplaySlot.SIDEBAR);
