@@ -65,20 +65,20 @@ public class JoinListener implements Listener {
                 Date teraz = new Date();
                 SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
 
-                Score s1 = objective.getScore(Util.fixColor("&7" + data.format(teraz)));
+                Score s1 = objective.getScore(Util.fixColor("&7" + data.format(teraz) + "    &8" + Bukkit.getServer().getName()));
                 s1.setScore(9);
-                Score s2 = objective.getScore(blankLine());
+                Score s2 = objective.getScore(Util.fixColor("&1"));
                 s2.setScore(8);
-                s2.setScore(6);
-                s2.setScore(3);
                 Score s3 = objective.getScore(Util.fixColor("&fGracze: &a" + Bukkit.getOnlinePlayers().size() + "/70"));
                 s3.setScore(7);
-                Score s4 = objective.getScore(" ");
+                Score s4 = objective.getScore(Util.fixColor("&2"));
+                s4.setScore(6);
                 Score s5 = objective.getScore("&fRozgrywka wystartuje za &a" + time);
                 s5.setScore(5);
                 Score s6 = objective.getScore("&fjesli bedzie minimum &a30 &fgraczy!");
                 s6.setScore(4);
-                Score s7 = objective.getScore("  ");
+                Score s7 = objective.getScore(Util.fixColor("&3"));
+                s7.setScore(3);
                 Score s8 = objective.getScore("&fTryb: &6&lSOLO");
                 s8.setScore(2);
                 Score s9 = objective.getScore("&e&lUHC CHAMPIONS");
@@ -99,88 +99,18 @@ public class JoinListener implements Listener {
                         public void run() {
                             time--;
                             if (time == 25) {
-                                new Title(player).title(Util.fixColor("&aGra startuje!")).times(0, 1, 0).send();
-                            }
-                            if (time == 24) {
-                                new Title(player).title(Util.fixColor("&a24")).times(0, 1, 0).send();
-                            }
-                            if (time == 23) {
-                                new Title(player).title(Util.fixColor("&a23")).times(0, 1, 0).send();
-                            }
-                            if (time == 22) {
-                                new Title(player).title(Util.fixColor("&a22")).times(0, 1, 0).send();
-                            }
-                            if (time == 21) {
-                                new Title(player).title(Util.fixColor("&a21")).times(0, 1, 0).send();
-                            }
-                            if (time == 20) {
-                                new Title(player).title(Util.fixColor("&a20")).times(0, 1, 0).send();
-                            }
-                            if (time == 19) {
-                                new Title(player).title(Util.fixColor("&a19")).times(0, 1, 0).send();
-                            }
-                            if (time == 18) {
-                                new Title(player).title(Util.fixColor("&a18")).times(0, 1, 0).send();
-                            }
-                            if (time == 17) {
-                                new Title(player).title(Util.fixColor("&a17")).times(0, 1, 0).send();
-                            }
-                            if (time == 16) {
-                                new Title(player).title(Util.fixColor("&a16")).times(0, 1, 0).send();
-                            }
-                            if (time == 15) {
-                                new Title(player).title(Util.fixColor("&a15")).times(0, 1, 0).send();
-                            }
-                            if (time == 14) {
-                                new Title(player).title(Util.fixColor("&a14")).times(0, 1, 0).send();
-                            }
-                            if (time == 13) {
-                                new Title(player).title(Util.fixColor("&a13")).times(0, 1, 0).send();
-                            }
-                            if (time == 12) {
-                                new Title(player).title(Util.fixColor("&a12")).times(0, 1, 0).send();
-                            }
-                            if (time == 11) {
-                                new Title(player).title(Util.fixColor("&a11")).times(0, 1, 0).send();
-                            }
-                            if (time == 10) {
-                                new Title(player).title(Util.fixColor("&a10")).times(0, 1, 0).send();
-                            }
-                            if (time == 9) {
-                                new Title(player).title(Util.fixColor("&a9")).times(0, 1, 0).send();
-                            }
-                            if (time == 8) {
-                                new Title(player).title(Util.fixColor("&a8")).times(0, 1, 0).send();
-                            }
-                            if (time == 7) {
-                                new Title(player).title(Util.fixColor("&a7")).times(0, 1, 0).send();
-                            }
-                            if (time == 6) {
-                                new Title(player).title(Util.fixColor("&a6")).times(0, 1, 0).send();
-                            }
-                            if (time == 5) {
-                                new Title(player).title(Util.fixColor("&a5")).times(0, 1, 0).send();
-                            }
-                            if (time == 4) {
-                                new Title(player).title(Util.fixColor("&a4")).times(0, 1, 0).send();
-                            }
-                            if (time == 3) {
-                                new Title(player).title(Util.fixColor("&a3")).times(0, 1, 0).send();
-                            }
-                            if (time == 2) {
-                                new Title(player).title(Util.fixColor("&a2")).times(0, 1, 0).send();
-                            }
-                            if (time == 1) {
-                                new Title(player).title(Util.fixColor("&aPrzygotuj sie!")).times(0, 1, 0).send();
+                                new Title(player).title(Util.fixColor("&aGra startuje za " + time)).times(0, 1, 0).send();
                             }
                             if (time == 0) {
-                                new Title(player).title(Util.fixColor("&aStart!")).times(0, 2, 0).send();
-                                Random random = new Random();
-                                int x = random.nextInt(900);
-                                int z = random.nextInt(900);
-                                Location UHCTeleport = Bukkit.getWorld("UHC").getHighestBlockAt(x, z).getLocation();
-                                UHCPlayers.teleport(UHCTeleport);
-                            }
+                                    new Title(player).title(Util.fixColor("&aStart!")).times(0, 2, 0).send();
+                                    Random random = new Random();
+                                    int x = random.nextInt(900);
+                                    int z = random.nextInt(900);
+                                    Location UHCTeleport = Bukkit.getWorld("UHC").getHighestBlockAt(x, z).getLocation();
+                                    UHCPlayers.teleport(UHCTeleport);
+                                    cancel();
+                                }
+                            new Title(player).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
                         }
                     }.runTaskLater(UHCPlugin.Companion.getInstance(), 20L);
                 }
