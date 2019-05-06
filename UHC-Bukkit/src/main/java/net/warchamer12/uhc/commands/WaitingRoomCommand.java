@@ -12,7 +12,7 @@ public class WaitingRoomCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
-            sender.sendMessage(Util.fixColor(""));
+            sender.sendMessage(Util.fixColor("&6Utworzono waiting room!"));
             UHCPlugin.Companion.getInstance().getConfig().set("WaitingRoom", 1);
             UHCPlugin.Companion.getInstance().saveConfig();
         } else {
@@ -20,5 +20,6 @@ public class WaitingRoomCommand implements CommandExecutor {
         }
         return false;
     }
+
 
 }

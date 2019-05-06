@@ -1,3 +1,7 @@
 name: 'UHC'
 main: ''
 version: '1.8'
+
+commands:
+  hub:
+  waitingroom:
