@@ -67,24 +67,26 @@ public class JoinListener implements Listener {
                 SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
 
                 Score s1 = objective.getScore(Util.fixColor("&7" + data.format(teraz)));
-                s1.setScore(-1);
+                s1.setScore(1);
                 Score s2 = objective.getScore(" ");
-                s2.setScore(-2);
-                Score s3 = objective.getScore(Util.fixColor("&fGracze: &a" + Bukkit.getOnlinePlayers() + "/70"));
-                s3.setScore(-3);
+                s2.setScore(2);
+                Score s3 = objective.getScore(Util.fixColor("&fGracze: &a" + Bukkit.getServer().getOnlinePlayers() + "/70"));
+                s3.setScore(3);
                 Score s4 = objective.getScore(" ");
-                s4.setScore(-4);
+                s4.setScore(4);
                 Score s5 = objective.getScore("&fRozgrywka wystartuje za &a" + time);
-                s5.setScore(-5);
+                s5.setScore(5);
                 Score s6 = objective.getScore("&fjesli bedzie minimum &a30 &fgraczy!");
-                s6.setScore(-6);
+                s6.setScore(6);
                 Score s7 = objective.getScore(" ");
-                s7.setScore(-7);
+                s7.setScore(7);
                 Score s8 = objective.getScore("&fTryb: &6&l" + arena.getArenaType().name());
-                s8.setScore(-8);
+                s8.setScore(8);
                 Score s9 = objective.getScore("&eUHC CHAMPIONS");
-                s9.setScore(-9);
-                player.setScoreboard(board);
+                s9.setScore(9);
+                for(Player online : Bukkit.getServer().getOnlinePlayers()) {
+                    online.setScoreboard(board);
+                }
             }
         }.runTaskLater(UHCPlugin.Companion.getInstance(), 3L);
         if (Game == true) {
