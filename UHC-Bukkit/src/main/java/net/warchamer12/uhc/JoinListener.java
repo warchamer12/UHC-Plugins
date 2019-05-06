@@ -59,31 +59,31 @@ public class JoinListener implements Listener {
                 ScoreboardManager manager = Bukkit.getScoreboardManager();
                 Scoreboard board = manager.getNewScoreboard();
 
-                Objective objective = board.registerNewObjective(Util.fixColor("&eUHC CHAMPIONS"), "dummy");
+                Objective objective = board.registerNewObjective(Util.fixColor("&e&lUHC CHAMPIONS"), "dummy");
                 objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-                objective.setDisplayName(Util.fixColor("&eUHC CHAMPIONS"));
+                objective.setDisplayName(Util.fixColor("&e&lUHC CHAMPIONS"));
 
                 Date teraz = new Date();
                 SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
 
                 Score s1 = objective.getScore(Util.fixColor("&7" + data.format(teraz)));
-                s1.setScore(1);
-                Score s2 = objective.getScore(" ");
-                s2.setScore(2);
+                s1.setScore(9);
+                Score s2 = objective.getScore("   ");
+                s2.setScore(8);
                 Score s3 = objective.getScore(Util.fixColor("&fGracze: &a" + Bukkit.getOnlinePlayers().size() + "/70"));
-                s3.setScore(3);
+                s3.setScore(7);
                 Score s4 = objective.getScore(" ");
-                s4.setScore(4);
+                s4.setScore(6);
                 Score s5 = objective.getScore("&fStartuje za &a" + time);
                 s5.setScore(5);
                 Score s6 = objective.getScore("&fMin &a30 graczy");
-                s6.setScore(6);
-                Score s7 = objective.getScore(" ");
-                s7.setScore(7);
+                s6.setScore(4);
+                Score s7 = objective.getScore("  ");
+                s7.setScore(3);
                 Score s8 = objective.getScore("&fTryb: &6&l" + arena.getArenaType().name());
-                s8.setScore(8);
-                Score s9 = objective.getScore("&eUHC CHAMPIONS");
-                s9.setScore(9);
+                s8.setScore(2);
+                Score s9 = objective.getScore("&e&lUHC CHAMPIONS");
+                s9.setScore(1);
                 for(Player online : Bukkit.getServer().getOnlinePlayers()) {
                     online.setScoreboard(board);
                 }
