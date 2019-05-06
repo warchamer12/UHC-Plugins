@@ -70,7 +70,7 @@ public class JoinListener implements Listener {
                 s1.setScore(1);
                 Score s2 = objective.getScore(" ");
                 s2.setScore(2);
-                Score s3 = objective.getScore(Util.fixColor("&fGracze: &a" + Bukkit.getOnlinePlayers() + "/70"));
+                Score s3 = objective.getScore(Util.fixColor("&fGracze: &a" + Bukkit.getOnlinePlayers().size() + "/70"));
                 s3.setScore(3);
                 Score s4 = objective.getScore(" ");
                 s4.setScore(4);
