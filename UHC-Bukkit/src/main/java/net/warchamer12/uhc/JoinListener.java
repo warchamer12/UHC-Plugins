@@ -53,7 +53,7 @@ public class JoinListener implements Listener {
                 sidebar.add(Util.fixColor("&fRozgrywka wystartuje za &a" + time), -5);
                 sidebar.add(Util.fixColor("&fjesli bedzie minimum &a30 &fgraczy!"), -6);
                 sidebar.add(" ", -7);
-                sidebar.add(Util.fixColor("&fTryb: &6&l" + arena.getArenaType().name()), 8);
+                sidebar.add(Util.fixColor("&fTryb: &6&l" + arena.getArenaType().name()), -8);
                 sidebar.add("&eUHC CHAMPIONS", -9);
                 sidebar.build();
                 sidebar.send(player);
