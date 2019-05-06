@@ -70,13 +70,13 @@ public class JoinListener implements Listener {
                 s1.setScore(1);
                 Score s2 = objective.getScore(" ");
                 s2.setScore(2);
-                Score s3 = objective.getScore(Util.fixColor("&fGracze: &a" + Bukkit.getServer().getOnlinePlayers() + "/70"));
+                Score s3 = objective.getScore(Util.fixColor("&fGracze: &a" + Bukkit.getOnlinePlayers() + "/70"));
                 s3.setScore(3);
                 Score s4 = objective.getScore(" ");
                 s4.setScore(4);
-                Score s5 = objective.getScore("&fRozgrywka wystartuje za &a" + time);
+                Score s5 = objective.getScore("&fStartuje za &a" + time);
                 s5.setScore(5);
-                Score s6 = objective.getScore("&fjesli bedzie minimum &a30 &fgraczy!");
+                Score s6 = objective.getScore("&fMin &a30 graczy");
                 s6.setScore(6);
                 Score s7 = objective.getScore(" ");
                 s7.setScore(7);
