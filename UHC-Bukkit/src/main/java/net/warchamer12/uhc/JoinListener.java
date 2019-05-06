@@ -59,9 +59,9 @@ public class JoinListener implements Listener {
                 ScoreboardManager manager = Bukkit.getScoreboardManager();
                 Scoreboard board = manager.getNewScoreboard();
 
-                Objective objective = board.registerNewObjective(Util.fixColor("&e&lUHC CHAMPIONS"), "dummy");
+                Objective objective = board.registerNewObjective(Util.fixColor("&eUHC CHAMPIONS"), "dummy");
                 objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-                objective.setDisplayName(Util.fixColor("&e&lUHC CHAMPIONS"));
+                objective.setDisplayName(Util.fixColor("&eUHC CHAMPIONS"));
 
                 Date teraz = new Date();
                 SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
