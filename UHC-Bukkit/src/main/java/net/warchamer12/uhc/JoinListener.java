@@ -38,28 +38,28 @@ public class JoinListener implements Listener {
 
         Arena arena = ArenaStorage.INSTANCE.getArenasMap().get(UHCPlugin.Companion.getConfigManager().getArenaId());
 
-        player.setHealthScale(20D);
-        ScoreboardBuilder sidebar = new ScoreboardBuilder(Util.fixColor("&e&lUHC CHAMPIONS"));
-
-        Date teraz = new Date();
-        SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
-
-        sidebar.add(Util.fixColor("&7" + data.format(teraz)), -1);
-        sidebar.add(" ", -2);
-        sidebar.add(Util.fixColor("&fGracze: &a" + Bukkit.getOnlinePlayers() + "/70"), -3);
-        sidebar.add(" ", -4);
-        sidebar.add(Util.fixColor("&fRozgrywka wystartuje za &a" + time), -5);
-        sidebar.add(Util.fixColor("&fjesli bedzie minimum &a30 &fgraczy!"), -6);
-        sidebar.add(" ", -7);
-        sidebar.add(Util.fixColor("&fTryb: &6&l" + arena.getArenaType().name()), -8);
-        sidebar.add("&eUHC CHAMPIONS", -9);
+        player.setHealthScale(40D);
         new BukkitRunnable() {
             @Override
             public void run() {
+                ScoreboardBuilder sidebar = new ScoreboardBuilder(Util.fixColor("&eUHC CHAMPIONS"));
+
+                Date teraz = new Date();
+                SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
+
+                sidebar.add(Util.fixColor("&7" + data.format(teraz)), -1);
+                sidebar.add(" ", -2);
+                sidebar.add(Util.fixColor("&fGracze: &a" + Bukkit.getOnlinePlayers() + "/70"), -3);
+                sidebar.add(" ", -4);
+                sidebar.add(Util.fixColor("&fRozgrywka wystartuje za &a" + time), -5);
+                sidebar.add(Util.fixColor("&fjesli bedzie minimum &a30 &fgraczy!"), -6);
+                sidebar.add(" ", -7);
+                sidebar.add(Util.fixColor("&fTryb: &6&l" + arena.getArenaType().name()), 8);
+                sidebar.add("&eUHC CHAMPIONS", -9);
                 sidebar.build();
                 sidebar.send(player);
             }
-        }.runTaskLater(UHCPlugin.Companion.getInstance(), 20L);
+        }.runTaskLater(UHCPlugin.Companion.getInstance(), 3L);
         if (Game == true) {
             Bukkit.getServer().getConsoleSender().sendMessage("Wlaczono Game na false!");
             Game = false;

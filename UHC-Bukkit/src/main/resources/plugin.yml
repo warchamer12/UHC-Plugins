@@ -1,5 +1,5 @@
 name: 'UHC'
-main: ''
+main: 'net.warchamer12.uhc.UHCPlugin'
 version: '1.8'
 
 commands:
