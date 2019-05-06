@@ -12,6 +12,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scoreboard.*;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -41,10 +42,7 @@ public class JoinListener implements Listener {
             @Override
             public void run() {
                 Arena arena = ArenaStorage.INSTANCE.getArenasMap().get(UHCPlugin.Companion.getConfigManager().getArenaId());
-                ScoreboardBuilder sidebar = new ScoreboardBuilder(Util.fixColor("&eUHC CHAMPIONS"));
-
-                Date teraz = new Date();
-                SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
+                /*ScoreboardBuilder sidebar = new ScoreboardBuilder(Util.fixColor("&eUHC CHAMPIONS"));
 
                 sidebar.add(Util.fixColor("&7" + data.format(teraz)), -1);
                 sidebar.add(" ", -2);
@@ -56,7 +54,37 @@ public class JoinListener implements Listener {
                 sidebar.add(Util.fixColor("&fTryb: &6&l" + arena.getArenaType().name()), -8);
                 sidebar.add("&eUHC CHAMPIONS", -9);
                 sidebar.build();
-                sidebar.send(player);
+                sidebar.send(player);*/
+
+                ScoreboardManager manager = Bukkit.getScoreboardManager();
+                Scoreboard board = manager.getNewScoreboard();
+
+                Objective objective = board.registerNewObjective(Util.fixColor("&eUHC CHAMPIONS"), "dummy");
+                objective.setDisplaySlot(DisplaySlot.SIDEBAR);
+                objective.setDisplayName(Util.fixColor("&eUHC CHAMPIONS"));
+
+                Date teraz = new Date();
+                SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
+
+                Score s1 = objective.getScore(Util.fixColor("&7" + data.format(teraz)));
+                s1.setScore(-1);
+                Score s2 = objective.getScore(" ");
+                s2.setScore(-2);
+                Score s3 = objective.getScore(Util.fixColor("&fGracze: &a" + Bukkit.getOnlinePlayers() + "/70"));
+                s3.setScore(-3);
+                Score s4 = objective.getScore(" ");
+                s4.setScore(-4);
+                Score s5 = objective.getScore("&fRozgrywka wystartuje za &a" + time);
+                s5.setScore(-5);
+                Score s6 = objective.getScore("&fjesli bedzie minimum &a30 &fgraczy!");
+                s6.setScore(-6);
+                Score s7 = objective.getScore(" ");
+                s7.setScore(-7);
+                Score s8 = objective.getScore("&fTryb: &6&l" + arena.getArenaType().name());
+                s8.setScore(-8);
+                Score s9 = objective.getScore("&eUHC CHAMPIONS");
+                s9.setScore(-9);
+                player.setScoreboard(board);
             }
         }.runTaskLater(UHCPlugin.Companion.getInstance(), 3L);
         if (Game == true) {
