@@ -65,7 +65,7 @@ public class JoinListener implements Listener {
                 Date teraz = new Date();
                 SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
 
-                Score s1 = objective.getScore(Util.fixColor("&7" + data.format(teraz) + "    &8" + Bukkit.getServer().getName()));
+                Score s1 = objective.getScore(Util.fixColor("&7" + data.format(teraz) + "      &8" + Bukkit.getServer().getName()));
                 s1.setScore(9);
                 Score s2 = objective.getScore(Util.fixColor("&1"));
                 s2.setScore(8);
@@ -73,15 +73,15 @@ public class JoinListener implements Listener {
                 s3.setScore(7);
                 Score s4 = objective.getScore(Util.fixColor("&2"));
                 s4.setScore(6);
-                Score s5 = objective.getScore("&fRozgrywka wystartuje za &a" + time);
+                Score s5 = objective.getScore(Util.fixColor("&fRozgrywka wystartuje za &a" + time + " &fsekund"));
                 s5.setScore(5);
-                Score s6 = objective.getScore("&fjesli bedzie minimum &a30 &fgraczy!");
+                Score s6 = objective.getScore(Util.fixColor("&fjesli bedzie minimum &a30 &fgraczy!"));
                 s6.setScore(4);
                 Score s7 = objective.getScore(Util.fixColor("&3"));
                 s7.setScore(3);
-                Score s8 = objective.getScore("&fTryb: &6&lSOLO");
+                Score s8 = objective.getScore(Util.fixColor("&fTryb: &6&lSOLO"));
                 s8.setScore(2);
-                Score s9 = objective.getScore("&e&lUHC CHAMPIONS");
+                Score s9 = objective.getScore(Util.fixColor("&e&lUHC CHAMPIONS"));
                 s9.setScore(1);
                 for(Player online : Bukkit.getServer().getOnlinePlayers()) {
                     online.setScoreboard(board);
@@ -118,10 +118,6 @@ public class JoinListener implements Listener {
         } else {
             return;
         }
-    }
-
-    public String blankLine() {
-        return " ";
     }
 
 
