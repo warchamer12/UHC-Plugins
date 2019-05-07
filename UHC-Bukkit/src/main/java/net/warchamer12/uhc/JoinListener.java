@@ -95,9 +95,9 @@ public class JoinListener implements Listener {
                     new BukkitRunnable() {
                         @Override
                         public void run() {
-                            time--;
                             if (time == 24) {
                                 new Title(UHCPlayers).title(Util.fixColor("&aGra startuje za " + time)).times(0, 1, 0).send();
+                                return;
                             }
                             if (time == 0) {
                                 new Title(UHCPlayers).title(Util.fixColor("&aStart!")).times(2, 3, 1).send();
@@ -107,12 +107,18 @@ public class JoinListener implements Listener {
                                 int y = Bukkit.getWorld("world").getHighestBlockYAt(x, z);
                                 //Location UHCTeleport = Bukkit.getWorld("world").getHighestBlockAt(x, z).getLocation();
                                 World world = Bukkit.getWorld("world");
-                                Location loc = new Location(world, x, y, z);
+                                Location loc = new Location(world, x, y + 1, z);
                                 UHCPlayers.teleport(loc);
+                                UHCPlayers.setHealthScale(40);
+                                UHCPlayers.setFoodLevel(15);
                                 Bukkit.getServer().getScheduler().cancelTask(time);
                                 cancel();
                             }
-                            new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
+                            if (time <=23 && time >= 1) {
+                                new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
+                                time--;
+                                return;
+                            }
                         }
                     }.runTaskTimer(UHCPlugin.Companion.getInstance(), 20L, 20L);
                 }
