@@ -1,6 +1,7 @@
 package net.warchamer12.uhc
 
 import net.warchamer12.uhc.basic.Arena
+import net.warchamer12.uhc.commands.GameCommand
 import net.warchamer12.uhc.commands.HubCommand
 import net.warchamer12.uhc.commands.WaitingRoomCommand
 import net.warchamer12.uhc.redis.RedisManager
@@ -57,6 +58,7 @@ class UHCPlugin : JavaPlugin() {
     private fun getCommands() {
         getCommand("hub").setExecutor(HubCommand())
         getCommand("waitingroom").setExecutor(WaitingRoomCommand())
+        getCommand("start").setExecutor(GameCommand())
     }
 
 

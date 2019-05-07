@@ -1,6 +1,5 @@
 package net.warchamer12.uhc;
 
-import net.minecraft.server.v1_8_R3.MinecraftServer;
 import net.warchamer12.uhc.basic.Arena;
 import net.warchamer12.uhc.basic.ArenaStorage;
 import net.warchamer12.uhc.utils.Title;
@@ -20,6 +19,8 @@ import java.util.Date;
 import java.util.Random;
 
 public class JoinListener implements Listener {
+
+    public static boolean PVP = false;
 
     public static int time = 25;
 
