@@ -38,6 +38,7 @@ class UHCPlugin : JavaPlugin() {
 
         val pluginManager = Bukkit.getPluginManager()
         pluginManager.registerEvents(JoinListener(), this)
+        pluginManager.registerEvents(DeathListener(), this)
         pluginManager.registerEvents(LeaveListener(), this)
 
         val arena = Arena(configManager.arenaId, configManager.arenaWorld, configManager.arenaMaxPlayers)
