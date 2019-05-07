@@ -23,7 +23,6 @@ public class DeathListener implements Listener {
             zabity.setGameMode(GameMode.ADVENTURE);
             zabity.setAllowFlight(true);
             zabity.setFlying(true);
-            zabity.setFlySpeed(4);
             new Title(zabity).title(Util.fixColor("&cUmarles!")).times(1, 3, 1).send();
             for (Player UHCPlayers : JoinListener.UHCPlayers) {
                 zabity.hidePlayer(UHCPlayers);
@@ -46,7 +45,6 @@ public class DeathListener implements Listener {
             zabity.setGameMode(GameMode.ADVENTURE);
             zabity.setAllowFlight(true);
             zabity.setFlying(true);
-            zabity.setFlySpeed(4);
             new Title(zabity).title(Util.fixColor("&cUmarles!")).times(1, 3, 1).send();
             for (Player UHCPlayers : JoinListener.UHCPlayers) {
                 zabity.hidePlayer(UHCPlayers);
