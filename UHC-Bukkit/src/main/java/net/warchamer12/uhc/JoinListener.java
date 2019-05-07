@@ -99,15 +99,14 @@ public class JoinListener implements Listener {
                                 new Title(UHCPlayers).title(Util.fixColor("&aGra startuje za " + time)).times(0, 1, 0).send();
                             }
                             if (time == 0) {
-                                    new Title(UHCPlayers).title(Util.fixColor("&aStart!")).times(0, 2, 0).send();
-                                    Random random = new Random();
-                                    int x = random.nextInt(900);
-                                    int z = random.nextInt(900);
-                                    Location UHCTeleport = Bukkit.getWorld("UHC").getHighestBlockAt(x, z).getLocation();
-                                    UHCPlayers.teleport(UHCTeleport);
-                                    time = 0;
-                                    Bukkit.getServer().getScheduler().cancelAllTasks();
-                                }
+                                Bukkit.getServer().getScheduler().cancelTask(time);
+                                new Title(UHCPlayers).title(Util.fixColor("&aStart!")).times(0, 2, 0).send();
+                                Random random = new Random();
+                                int x = random.nextInt(900);
+                                int z = random.nextInt(900);
+                                Location UHCTeleport = Bukkit.getWorld("world").getHighestBlockAt(x, z).getLocation();
+                                UHCPlayers.teleport(UHCTeleport);
+                            }
                             new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
                         }
                     }.runTaskTimer(UHCPlugin.Companion.getInstance(), 20L, 20L);
