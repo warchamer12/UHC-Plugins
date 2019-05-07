@@ -45,7 +45,7 @@ class UHCPlugin : JavaPlugin() {
         val arena = Arena(configManager.arenaId, configManager.arenaWorld, configManager.arenaMaxPlayers)
 
         logger.info("Plugin has been enabled.")
-        JoinListener.Game = true
+        JoinListener.Game = false
         JoinListener.Start = false
         logger.info("Wlaczono gre na true!")
 

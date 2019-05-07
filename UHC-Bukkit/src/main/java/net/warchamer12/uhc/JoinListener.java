@@ -84,7 +84,7 @@ public class JoinListener implements Listener {
                     return;
                 }
             }
-        }.runTaskLater(UHCPlugin.Companion.getInstance(), 3L);
+        }.runTaskTimer(UHCPlugin.Companion.getInstance(), 40L, 40L);
         if (Game == true) {
             Bukkit.getServer().getConsoleSender().sendMessage("Wlaczono Game na false!");
             Game = false;
@@ -110,7 +110,7 @@ public class JoinListener implements Listener {
                             new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
                             return;
                         }
-                    }.runTaskLater(UHCPlugin.Companion.getInstance(), 3L);
+                    }.runTaskTimer(UHCPlugin.Companion.getInstance(), 20L, 20L);
                 }
             }
         } else {
