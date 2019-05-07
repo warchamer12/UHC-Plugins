@@ -1,11 +1,13 @@
 package net.warchamer12.uhc;
 
+import jdk.nashorn.internal.ir.Block;
 import net.warchamer12.uhc.basic.Arena;
 import net.warchamer12.uhc.basic.ArenaStorage;
 import net.warchamer12.uhc.utils.Title;
 import net.warchamer12.uhc.utils.Util;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -99,13 +101,16 @@ public class JoinListener implements Listener {
                                 new Title(UHCPlayers).title(Util.fixColor("&aGra startuje za " + time)).times(0, 1, 0).send();
                             }
                             if (time == 0) {
-                                Bukkit.getServer().getScheduler().cancelTask(time);
+                                Bukkit.getScheduler().cancelTask(time);
                                 new Title(UHCPlayers).title(Util.fixColor("&aStart!")).times(0, 2, 0).send();
                                 Random random = new Random();
                                 int x = random.nextInt(900);
                                 int z = random.nextInt(900);
-                                Location UHCTeleport = Bukkit.getWorld("world").getHighestBlockAt(x, z).getLocation();
-                                UHCPlayers.teleport(UHCTeleport);
+                                int y = Bukkit.getWorld("world").getHighestBlockYAt(x, z);
+                                //Location UHCTeleport = Bukkit.getWorld("world").getHighestBlockAt(x, z).getLocation();
+                                World world = Bukkit.getWorld("world");
+                                Location loc = new Location(world, x, y, z);
+                                UHCPlayers.teleport(loc);
                             }
                             new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
                         }
