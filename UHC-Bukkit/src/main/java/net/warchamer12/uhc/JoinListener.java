@@ -81,6 +81,7 @@ public class JoinListener implements Listener {
                 s10.setScore(1);
                 for(Player online : Bukkit.getServer().getOnlinePlayers()) {
                     online.setScoreboard(board);
+                    return;
                 }
             }
         }.runTaskLater(UHCPlugin.Companion.getInstance(), 3L);
@@ -107,8 +108,9 @@ public class JoinListener implements Listener {
                                     cancel();
                                 }
                             new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
+                            return;
                         }
-                    }.runTaskLater(UHCPlugin.Companion.getInstance(), 20L);
+                    }.runTaskLater(UHCPlugin.Companion.getInstance(), 3L);
                 }
             }
         } else {
