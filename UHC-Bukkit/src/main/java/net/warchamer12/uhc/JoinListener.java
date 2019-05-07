@@ -116,9 +116,9 @@ public class JoinListener implements Listener {
                             }
                             if (time <=23 && time >= 1) {
                                 new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
-                                time--;
                                 return;
                             }
+                            time--;
                         }
                     }.runTaskTimer(UHCPlugin.Companion.getInstance(), 20L, 20L);
                 }
