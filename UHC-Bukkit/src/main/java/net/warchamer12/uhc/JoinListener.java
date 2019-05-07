@@ -35,6 +35,7 @@ public class JoinListener implements Listener {
             event.getPlayer().kickPlayer("&6Na tym serwerze aktualnie trwa rozgrywka, sprobuj innym razem!");
         }
         Player player = event.getPlayer();
+        UHCDeathPlayers.remove(player);
         UHCPlayers.add(player);
 
         player.setHealthScale(40D);

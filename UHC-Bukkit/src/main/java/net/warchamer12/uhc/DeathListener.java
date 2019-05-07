@@ -20,6 +20,7 @@ public class DeathListener implements Listener {
             Player zabojca = zabity.getKiller();
             new Title(zabojca).title(Util.fixColor("&cZabiles gracza: " + zabity)).times(0, 1, 0).send();
             zabity.setGameMode(GameMode.ADVENTURE);
+            zabity.getAllowFlight();
             zabity.setFlying(true);
             zabity.setFlySpeed(4);
             new Title(zabity).title(Util.fixColor("&cUmarles!")).times(1, 3, 1).send();
@@ -41,6 +42,7 @@ public class DeathListener implements Listener {
             JoinListener.UHCPlayers.remove(zabity);
             JoinListener.UHCDeathPlayers.add(zabity);
             zabity.setGameMode(GameMode.ADVENTURE);
+            zabity.getAllowFlight();
             zabity.setFlying(true);
             zabity.setFlySpeed(4);
             new Title(zabity).title(Util.fixColor("&cUmarles!")).times(1, 3, 1).send();
