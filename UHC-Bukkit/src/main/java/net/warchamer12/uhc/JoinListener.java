@@ -95,10 +95,6 @@ public class JoinListener implements Listener {
                     new BukkitRunnable() {
                         @Override
                         public void run() {
-                            if (time == 24) {
-                                new Title(UHCPlayers).title(Util.fixColor("&aGra startuje za " + time)).times(0, 1, 0).send();
-                                return;
-                            }
                             if (time == 0) {
                                 new Title(UHCPlayers).title(Util.fixColor("&aStart!")).times(2, 3, 1).send();
                                 Random random = new Random();
