@@ -93,10 +93,10 @@ public class JoinListener implements Listener {
                         public void run() {
                             time--;
                             if (time == 25) {
-                                new Title(player).title(Util.fixColor("&aGra startuje za " + time)).times(0, 1, 0).send();
+                                new Title(UHCPlayers).title(Util.fixColor("&aGra startuje za " + time)).times(0, 1, 0).send();
                             }
                             if (time == 0) {
-                                    new Title(player).title(Util.fixColor("&aStart!")).times(0, 2, 0).send();
+                                    new Title(UHCPlayers).title(Util.fixColor("&aStart!")).times(0, 2, 0).send();
                                     Random random = new Random();
                                     int x = random.nextInt(900);
                                     int z = random.nextInt(900);
@@ -104,7 +104,7 @@ public class JoinListener implements Listener {
                                     UHCPlayers.teleport(UHCTeleport);
                                     cancel();
                                 }
-                            new Title(player).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
+                            new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
                         }
                     }.runTaskLater(UHCPlugin.Companion.getInstance(), 20L);
                 }
