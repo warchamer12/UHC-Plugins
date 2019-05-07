@@ -2,6 +2,7 @@ package net.warchamer12.uhc;
 
 import net.warchamer12.uhc.utils.Title;
 import net.warchamer12.uhc.utils.Util;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -18,6 +19,9 @@ public class DeathListener implements Listener {
             JoinListener.UHCDeathPlayers.add(zabity);
             Player zabojca = zabity.getKiller();
             new Title(zabojca).title(Util.fixColor("&cZabiles gracza: " + zabity)).times(0, 1, 0).send();
+            zabity.setGameMode(GameMode.ADVENTURE);
+            zabity.setFlying(true);
+            zabity.setFlySpeed(4);
             for (Player UHCPlayers : JoinListener.UHCPlayers) {
                 new Title(zabity).title(Util.fixColor("&cUmarles!")).times(1, 3, 1).send();
                 zabity.hidePlayer(UHCPlayers);
