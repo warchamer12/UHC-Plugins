@@ -84,7 +84,7 @@ public class JoinListener implements Listener {
                     return;
                 }
             }
-        }.runTaskTimer(UHCPlugin.Companion.getInstance(), 40L, 40L);
+        }.runTaskTimer(UHCPlugin.Companion.getInstance(), 20L, 20L);
         if (Game == true) {
             Bukkit.getServer().getConsoleSender().sendMessage("Wlaczono Game na false!");
             Game = false;
@@ -106,9 +106,9 @@ public class JoinListener implements Listener {
                                     Location UHCTeleport = Bukkit.getWorld("UHC").getHighestBlockAt(x, z).getLocation();
                                     UHCPlayers.teleport(UHCTeleport);
                                     cancel();
+                                    time = 0;
                                 }
                             new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
-                            return;
                         }
                     }.runTaskTimer(UHCPlugin.Companion.getInstance(), 20L, 20L);
                 }
