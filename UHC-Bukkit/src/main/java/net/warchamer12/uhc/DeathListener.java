@@ -13,7 +13,7 @@ public class DeathListener implements Listener {
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
-        if (event.getEntity() instanceof Player && event.getEntity().getKiller() instanceof Player) {
+        if (event.getEntity() != null && event.getEntity().getKiller() != null && event.getEntity() instanceof Player && event.getEntity().getKiller() instanceof Player) {
             Player zabity =  event.getEntity();
             JoinListener.UHCPlayers.remove(zabity);
             JoinListener.UHCDeathPlayers.add(zabity);
