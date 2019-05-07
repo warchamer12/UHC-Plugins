@@ -105,8 +105,8 @@ public class JoinListener implements Listener {
                                     int z = random.nextInt(900);
                                     Location UHCTeleport = Bukkit.getWorld("UHC").getHighestBlockAt(x, z).getLocation();
                                     UHCPlayers.teleport(UHCTeleport);
-                                    cancel();
                                     time = 0;
+                                    Bukkit.getServer().getScheduler().cancelAllTasks();
                                 }
                             new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
                         }
