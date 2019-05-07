@@ -88,7 +88,7 @@ public class JoinListener implements Listener {
             Bukkit.getServer().getConsoleSender().sendMessage("Wlaczono Game na false!");
             Game = false;
             Bukkit.getServer().getConsoleSender().sendMessage("Gra zaraz wystartuje!");
-            if (UHCPlayers.size() >= 30) {
+            if (UHCPlayers.size() >= 0) {
                 for (Player UHCPlayers : Bukkit.getServer().getOnlinePlayers()) {
                     new BukkitRunnable() {
                         @Override
