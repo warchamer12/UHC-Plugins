@@ -114,10 +114,7 @@ public class JoinListener implements Listener {
                                 Bukkit.getServer().getScheduler().cancelTask(time);
                                 cancel();
                             }
-                            if (time <=23 && time >= 1) {
-                                new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
-                                return;
-                            }
+                            new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
                             time--;
                         }
                     }.runTaskTimer(UHCPlugin.Companion.getInstance(), 20L, 20L);
