@@ -2,6 +2,8 @@ package net.warchamer12.uhc;
 
 import net.warchamer12.uhc.basic.Arena;
 import net.warchamer12.uhc.basic.ArenaStorage;
+import net.warchamer12.uhc.manager.ArenaManager;
+import net.warchamer12.uhc.manager.ArenaObjects;
 import net.warchamer12.uhc.utils.Title;
 import net.warchamer12.uhc.utils.Util;
 import org.bukkit.Bukkit;
@@ -36,10 +38,18 @@ public class JoinListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
+        ArenaManager manager = UHCPlugin.Companion.getArenaManager();
+        ArenaObjects arenaObject = manager.getArena(event.getPlayer().getWorld().getName());
+
         if (Start == true) {
             event.getPlayer().kickPlayer("&6Na tym serwerze aktualnie trwa rozgrywka, sprobuj innym razem!");
         }
+
+        if(arenaObject == null){
+            return;
+        }
         Player player = event.getPlayer();
+        arenaObject.addPlayer(player);
         UHCDeathPlayers.remove(player);
         UHCPlayers.add(player);
 
@@ -85,6 +95,32 @@ public class JoinListener implements Listener {
                 }
             }
         }.runTaskTimer(UHCPlugin.Companion.getInstance(), 20L, 20L);
+        if (arenaObject.getPlayers().size() == 1) {
+            Bukkit.getServer().getConsoleSender().sendMessage("Gra zaraz wystartuje!");
+            for (Player UHCPlayers : Bukkit.getServer().getOnlinePlayers()) {
+                new BukkitRunnable() {
+                    @Override
+                    public void run() {
+                        if (time <= 0) {
+                            new Title(UHCPlayers).title(Util.fixColor("&aStart!")).times(2, 3, 1).send();
+                            Random random = new Random();
+                            int x = random.nextInt(900);
+                            int z = random.nextInt(900);
+                            int y = Bukkit.getWorld("world").getHighestBlockYAt(x, z);
+                            World world = Bukkit.getWorld("world");
+                            Location loc = new Location(world, x, y + 1, z);
+                            UHCPlayers.teleport(loc);
+                            UHCPlayers.setHealthScale(40);
+                            UHCPlayers.setFoodLevel(15);
+                            Bukkit.getServer().getScheduler().cancelTask(time);
+                            cancel();
+                        }
+                        new Title(UHCPlayers).title(Util.fixColor("&a" + time)).times(0, 1, 0).send();
+                        time--;
+                    }
+                }.runTaskTimer(UHCPlugin.Companion.getInstance(), 20L, 20L);
+            }
+        }
         /*if (Game == true) {
             Bukkit.getServer().getConsoleSender().sendMessage("Wlaczono Game na false!");
             Game = false;
