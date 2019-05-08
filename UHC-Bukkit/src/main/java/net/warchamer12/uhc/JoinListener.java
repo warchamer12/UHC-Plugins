@@ -85,7 +85,7 @@ public class JoinListener implements Listener {
                 }
             }
         }.runTaskTimer(UHCPlugin.Companion.getInstance(), 20L, 20L);
-        if (Game == true) {
+        /*if (Game == true) {
             Bukkit.getServer().getConsoleSender().sendMessage("Wlaczono Game na false!");
             Game = false;
             Bukkit.getServer().getConsoleSender().sendMessage("Gra zaraz wystartuje!");
@@ -117,7 +117,9 @@ public class JoinListener implements Listener {
             }
         } else {
             return;
-        }
+        }*/
+
+
     }
 
 
