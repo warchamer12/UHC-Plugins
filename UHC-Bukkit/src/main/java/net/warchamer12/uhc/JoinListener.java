@@ -1,6 +1,5 @@
 package net.warchamer12.uhc;
 
-import jdk.nashorn.internal.ir.Block;
 import net.warchamer12.uhc.basic.Arena;
 import net.warchamer12.uhc.basic.ArenaStorage;
 import net.warchamer12.uhc.utils.Title;
@@ -32,6 +31,9 @@ public class JoinListener implements Listener {
     public static ArrayList<Player> UHCPlayers = new ArrayList<>();
     public static ArrayList<Player> UHCDeathPlayers = new ArrayList<>();
 
+    ScoreboardManager manager = Bukkit.getScoreboardManager();
+    Scoreboard board = manager.getNewScoreboard();
+
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         if (Start == true) {
@@ -46,9 +48,6 @@ public class JoinListener implements Listener {
             @Override
             public void run() {
                 Arena arena = ArenaStorage.INSTANCE.getArenasMap().get(UHCPlugin.Companion.getConfigManager().getArenaId());
-
-                ScoreboardManager manager = Bukkit.getScoreboardManager();
-                Scoreboard board = manager.getNewScoreboard();
 
                 String name = Util.fixColor("&eUHC CHAMPIONS");
 
@@ -95,7 +94,7 @@ public class JoinListener implements Listener {
                     new BukkitRunnable() {
                         @Override
                         public void run() {
-                            if (time == 0) {
+                            if (time <= 0) {
                                 new Title(UHCPlayers).title(Util.fixColor("&aStart!")).times(2, 3, 1).send();
                                 Random random = new Random();
                                 int x = random.nextInt(900);
