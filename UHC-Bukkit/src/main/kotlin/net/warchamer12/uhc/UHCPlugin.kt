@@ -3,6 +3,7 @@ package net.warchamer12.uhc
 import net.warchamer12.uhc.basic.Arena
 import net.warchamer12.uhc.commands.GameCommand
 import net.warchamer12.uhc.commands.HubCommand
+import net.warchamer12.uhc.commands.UHCCommand
 import net.warchamer12.uhc.commands.WaitingRoomCommand
 import net.warchamer12.uhc.manager.ArenaManager
 import net.warchamer12.uhc.manager.ArenaObjects
@@ -66,6 +67,7 @@ class UHCPlugin : JavaPlugin() {
         getCommand("hub").setExecutor(HubCommand())
         getCommand("waitingroom").setExecutor(WaitingRoomCommand())
         getCommand("start").setExecutor(GameCommand())
+        getCommand("uhc").setExecutor(UHCCommand())
     }
 
     fun getArenaManager():ArenaManager {
